@@ -1,7 +1,7 @@
 <?php
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Hardcoded username and password for demonstration purposes
+   
     $validEmail = "paulsongoga@gmail.com";
     $validPassword = "paul";
 

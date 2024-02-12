@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "Error: All fields are required";
     }
 
-    $conn->close();
+    
 }
 
 // Initialize properties array
@@ -68,13 +68,11 @@ if ($id !== null) {
 
     if ($result1->num_rows > 0 && $result2->num_rows > 0) {
         // Output data for the clicked row from property1
-        // Output data for the clicked row from property1
 $row1 = $result1->fetch_assoc();
 
 $properties['image1'] = "admin/pages/uploads/" . $row1["image"];
 $properties['name'] = $row1["name"];
 $properties['price'] = $row1["price"];
-// Add more details from property1 as needed
 
 // Output data for the clicked row from property2
 $row2 = $result2->fetch_assoc();
@@ -249,7 +247,7 @@ $conn->close();
                 <input type="text" class="form-control" placeholder="Full Name" name="full_name"/>
                 <input type="text" class="form-control" placeholder="you@yourdomain.com" name="user_email"/>
                 <input type="text" class="form-control" placeholder="your number" name="user_number"/>
-                <input type="text" class="form-control" placeholder="property interested in " name="user_property"/>
+                <input type="hidden" class="form-control" placeholder="Property interested in " name="user_property" value='<?php echo $properties['name'] = $row1["name"];?>'/>
                 <textarea rows="6" class="form-control" placeholder="Whats on your mind?" name="message"></textarea>
       <button type="submit" class="btn btn-primary" name="Submit">Send Message</button>
       </form>
