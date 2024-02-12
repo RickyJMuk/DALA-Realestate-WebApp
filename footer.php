@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $conn->close();
     } else {
-        //echo "Error: Email address cannot be empty";
+        echo "Error: Email address cannot be empty";
     }
 }
 ?>

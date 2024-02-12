@@ -166,6 +166,13 @@
                         
                             <!-- /.nav-second-level -->
                         </li>
+                        <li><br></li>
+                        <li>
+                            <a href="addproduct.php"><i class="fa fa-plus fa-fw"></i> Add Products</span></a>
+                            </li>
+                            <li>
+                            <a href="allproducts.php"><i class="fa fa-list fa-fw"></i> All Products</span></a>
+                            </li>
                        
                     </ul>
                 </div>

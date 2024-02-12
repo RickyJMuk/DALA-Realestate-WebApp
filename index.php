@@ -1,5 +1,23 @@
 <?php include'header.php';?>
 
+<?php
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$dbname = "dala";
+
+$conn = new mysqli($hostname, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection Failed" . $conn->connect_error);
+}
+
+// Retrieve data from the property1 table
+$query = "SELECT * FROM property1";
+$result = $conn->query($query);
+
+?>
+
 <div class="">
     
 
@@ -138,93 +156,47 @@
   <div class="properties-listing spacer"> <a href="buysalerent.php" class="pull-right viewall">View All Listing</a>
     <h2>Featured Properties</h2>
     <div id="owl-example" class="owl-carousel">
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/108-Riverside.png" class="img-responsive" alt="properties"/>
-          <div class="status sold">Sold</div>
-        </div>
-        <h4><a href="riverside.php">108 Riverside</a></h4>
-        <p class="price">Price: Ksh 10,500,900</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="riverside.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Balcony-1.jpg" class="img-responsive" alt="properties"/>
-          <div class="status new">New</div>
-        </div>
-        <h4><a href="elina.php">Elina Residences</a></h4>
-        <p class="price">Price: Ksh 23,000,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="elina.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Serenity.jpg" class="img-responsive" alt="properties"/></div>
-        <h4><a href="kingserenity.php">Kings Serenity</a></h4>
-        <p class="price">Price: Ksh 4,000,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="kingserenity.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Diamond-Homes..png" class="img-responsive" alt="properties"/></div>
-        <h4><a href="diamond.php">Diamond Homes</a></h4>
-        <p class="price">Price: Ksh 6,000,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="diamond.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Eden-Lavington.png" class="img-responsive" alt="properties"/>
-          <div class="status sold">Sold</div>
-        </div>
-        <h4><a href="eden.php">Eden garden</a></h4>
-        <p class="price">Price: Ksh 12,500,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="eden.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Elite-Residence.png" class="img-responsive" alt="properties"/>
-          <div class="status sold">Sold</div>
-        </div>
-        <h4><a href="elite.php">Elite Residence</a></h4>
-        <p class="price">Price:Ksh 95,000 </p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="elite.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Kaisa.png" class="img-responsive" alt="properties"/>
-          <div class="status new">New</div>
-        </div>
-        <h4><a href="kaisa.php">Kaisa Garden</a></h4>
-        <p class="price">Price: Ksh 6,000,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="kaisa.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Sepal.png" class="img-responsive" alt="properties"/></div>
-        <h4><a href="sepal.php">Sepal Gardens</a></h4>
-        <p class="price">Price: Ksh 18,000,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="sepal.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Capital-Apartments.png" class="img-responsive" alt="properties"/></div>
-        <h4><a href="buru.php">Furnished Apartment</a></h4>
-        <p class="price">Price: Ksh 14,000,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="buru.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Orchid-Residency.png" class="img-responsive" alt="properties"/></div>
-        <h4><a href="orchid.php">Orchid Residency</a></h4>
-        <p class="price">Price: Ksh 10,500,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="orchid.php">View Details</a>
-      </div>
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/Urban..png" class="img-responsive" alt="properties"/></div>
-        <h4><a href="oasis.php">Urban Oasis</a></h4>
-        <p class="price">Price: Ksh 14,500,000</p>
-        <div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span> <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span> </div>
-        <a class="btn btn-primary" href="oasis.php">View Details</a>
-      </div>
+   <?php
+    $sql = "SELECT p1.*
+        FROM property1 p1
+        JOIN property2 p2 ON p1.id = p2.id
+        WHERE p2.category = 'featured'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+    // Output data of each row
+    while ($row = $result->fetch_assoc()) {
+        echo '<div class="properties">';
+        echo '<div class="image-holder"><img src="admin/pages/uploads/' . $row["image"] . '" alt="Property Image">';
+        echo '<div class="status sold">Available</div></div>';
+        echo '<h4><a href="property_details.php?id=' . $row["id"] . '">' . $row["name"] . '</a></h4>';
+        echo '<p class="price">Price: Ksh ' . $row["price"] . '</p>';
+        echo '<div class="listing-detail"><span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room">5</span>';
+        echo '<span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room">2</span>';
+        echo '<span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking">2</span>';
+        echo '<span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen">1</span></div>';
+        echo '<a class="btn btn-primary" href="property_details.php?id=' . $row["id"] . '">View Details</a>';
+        echo '</div>';
+    }
+} else {
+    echo "No records found";
+}
+
+
+
+?>
+
+   
+      
+      
+      
+      
+     
+      
+      
+      
+
       
     </div>
   </div>
@@ -245,47 +217,47 @@
             <li data-target="#myCarousel" data-slide-to="3" class=""></li>
           </ol>
           <!-- Carousel items -->
-          <div class="carousel-inner">
-            <div class="item active">
+          <?php
+    $sql = "SELECT p1.*
+        FROM property1 p1
+        JOIN property2 p2 ON p1.id = p2.id
+        WHERE p2.category = 'Recomended'";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  echo '<div class="carousel-inner">';
+  $active = true;
+
+  while ($row = $result->fetch_assoc()) {
+      echo '<div class="item ' . ($active ? 'active' : '') . '">
               <div class="row">
-                <div class="col-lg-4" ><img src="images/properties/sale1buy.jpg" class="img-responsive" alt="properties" /></div>
-                <div class="col-lg-8">
-                  <h5><a href="tasiab.php">Gerald Properties</a></h5>
-                  <p class="price">Ksh 3,000,000</p>
-                  <a href="tasiab.php" class="more">More Detail</a> </div>
+                  <div class="col-lg-4"><img src="admin/pages/uploads/' . $row["image"] . '" alt="Property Image" class="img-responsive" /></div>
+                  <div class="col-lg-8">
+                      <h5><a href="property_details.php?id=' . $row["id"] . '">' . $row["name"] . '</a></h5>
+                      <p class="price">Price: Ksh ' . $row["price"] . '</p>
+                      <a href="property_details.php?id=' . $row["id"] . '" class="more">More Detail</a>
+                  </div>
               </div>
-            </div>
-            <div class="item">
-              <div class="row">
-                <div class="col-lg-4"><img src="images/properties/sale2buy.jpg" class="img-responsive" alt="properties" /></div>
-                <div class="col-lg-8">
-                  <h5><a href="runda.php">Karuri Apartments</a></h5>
-                  <p class="price">Ksh 9,000,000</p>
-                  <a href="runda.php" class="more">More Detail</a> </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="row">
-                <div class="col-lg-4"><img src="images/properties/sale3buy.jpg" class="img-responsive" alt="properties" /></div>
-                <div class="col-lg-8">
-                  <h5><a href="buru.php">Kitonga Hieghts</a></h5>
-                  <p class="price">Ksh 6,000,000</p>
-                  <a href="buru.php" class="more">More Detail</a> </div>
-              </div>
-            </div>
-            <div class="item">
-              <div class="row">
-                <div class="col-lg-4"><img src="images/properties/sale4buy.jpg" class="img-responsive" alt="properties" /></div>
-                <div class="col-lg-8">
-                  <h5><a href="kamulu.php">Mosasa Apartments</a></h5>
-                  <p class="price">Ksh 2,500,000</p>
-                  <a href="kamulu.php" class="more">More Detail</a> </div>
-              </div>
-            </div>
+          </div>';
+
+      $active = false; // Set active to false after the first item
+  }
+
+  echo '</div>';
+} else {
+  echo "No records found";
+}
+
+$conn->close();
+?>
+
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+
 <?php include'footer.php';?>
